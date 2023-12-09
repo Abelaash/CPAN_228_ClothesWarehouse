@@ -1,4 +1,4 @@
-# CMaven SpringBoot Clothes Warehouse Application
+# Maven SpringBoot Clothes Warehouse Application
 
 **Abelaash Giritharan**
 **Thiago Simoes De Souza Gomes**
