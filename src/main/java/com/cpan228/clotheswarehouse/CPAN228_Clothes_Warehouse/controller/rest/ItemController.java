@@ -1,6 +1,7 @@
 package com.cpan228.clotheswarehouse.CPAN228_Clothes_Warehouse.controller.rest;
 
 import com.cpan228.clotheswarehouse.CPAN228_Clothes_Warehouse.model.Item;
+import com.cpan228.clotheswarehouse.CPAN228_Clothes_Warehouse.model.Item.Brand;
 import com.cpan228.clotheswarehouse.CPAN228_Clothes_Warehouse.model.User;
 import com.cpan228.clotheswarehouse.CPAN228_Clothes_Warehouse.repository.ClothesRepository;
 import jakarta.validation.Valid;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.EnumSet;
 
 @Controller
 @Slf4j
@@ -39,6 +42,13 @@ public class ItemController {
         return Item
                 .builder()
                 .build();
+    }
+
+    @ModelAttribute
+    public void brands (Model model) {
+        var brands = EnumSet.allOf(Brand.class);
+        model.addAttribute("brands", brands);
+        log.info("Brands converted to string: {}", brands);
     }
 
     @ModelAttribute

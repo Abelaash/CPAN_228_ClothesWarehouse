@@ -30,6 +30,17 @@ public class Item {
     @NotBlank
     private String brand;
 
+    public enum Brand {
+        BALENCIAGA("Balenciaga"), STONEISLAND("Stone Island"), DIOR("Dior"), GUCCI("Gucci"), LOUISVUITTON("Louis Vuitton"), OFFWHITE("Off-White"), SUPREME("Supreme"), VERSACE("Versace");
+        private String title;
+        private Brand(String title) {
+            this.title = title;
+        }
+        public String getTitle() {
+            return title;
+        }
+    }
+
     @Min(2000)
     private int year_of_creation;
 

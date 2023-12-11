@@ -40,22 +40,6 @@
           </span>
     </div>
     <div class="mb-3">
-      <label for="brand" class="form-label">Brand Name: </label>
-      <input
-              type="text"
-              th:field="*{brand}"
-              class="form-control"
-              id="brand"
-      />
-      <span
-              class="validationError"
-              th:if="${#fields.hasErrors('brand')}"
-              th:errors="*{brand}"
-      >
-            Brand Name error
-          </span>
-    </div>
-    <div class="mb-3">
       <label for="year_of_creation" class="form-label">Year: </label>
       <input
               type="number"
@@ -86,6 +70,9 @@
       >Price Error
           </span>
     </div>
+    <select th:field="*{brand}" class="form-select mt-5 mb-5" aria-label="Brand selection">
+      <option th:each="brand: ${brands}" th:value="${brand}" th:text="${brand.title}"/>
+    </select>
 
     <button class="btn btn-primary mt-5">Add Item</button>
   </form>
