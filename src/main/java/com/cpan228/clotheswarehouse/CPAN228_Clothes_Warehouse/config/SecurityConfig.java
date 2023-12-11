@@ -21,6 +21,7 @@ import static org.springframework.security.config.annotation.web.builders.HttpSe
  * Configuration class for Spring is like a holder of beans. We can use this
  * class to define beans that we want to use in our application.
  */
+@SuppressWarnings("ALL")
 @Configuration
 public class SecurityConfig {
     @Bean
@@ -56,7 +57,7 @@ public class SecurityConfig {
                 .failureUrl("/login?error=true")
                 .and()
                 .logout()
-                .logoutSuccessUrl("/")
+                .logoutSuccessUrl("/login")
                 .and()
                 .csrf()
                 .ignoringRequestMatchers(toH2Console())
