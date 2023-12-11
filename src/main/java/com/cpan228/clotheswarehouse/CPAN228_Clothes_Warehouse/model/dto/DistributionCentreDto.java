@@ -6,13 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DistributionCentre {
-    private int id;
+
+public class DistributionCentreDto {
     private String name;
-    private int longitude;
-    private int latitude;
-    private List<Item> item;
+    private double latitude;
+    private double longitude;
+    List<Item> items;
 }

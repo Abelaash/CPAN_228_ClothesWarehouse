@@ -1,4 +1,4 @@
-create table if not exists fighter (
+create table if not exists Item (
   id identity,
   name varchar(100) not null,
   brand varchar(100) not null,
